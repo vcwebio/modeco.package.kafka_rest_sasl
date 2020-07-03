@@ -11,8 +11,8 @@ services:
     ports: [${KAFKA_REST_SASL_PORTS}]
     networks: [package_overlay]
     deploy:
-      mode: replicated
-      replicas: ${KAFKA_REST_SASL_DEPLOY_REPLICAS}
+      mode: ${KAFKA_REST_SASL_DEPLOY_MODE}
+      ${KAFKA_REST_SASL_DEPLOY_MODE_REPLICATED_REPLICAS}
       resources:
         limits:
           cpus: '${KAFKA_REST_SASL_DEPLOY_RESOURCES_LIMITS_CPUS}'

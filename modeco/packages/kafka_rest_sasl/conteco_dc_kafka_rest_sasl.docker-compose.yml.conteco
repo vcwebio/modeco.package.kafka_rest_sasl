@@ -11,8 +11,8 @@ services:
     ports: [${CONTECO_DC_KAFKA_REST_SASL_PORTS}]
     networks: [${CONTECO_NETWORKLOCAL}_overlay]
     deploy:
-      mode: replicated
-      replicas: ${CONTECO_DC_KAFKA_REST_SASL_DEPLOY_REPLICAS}
+      mode: ${CONTECO_DC_KAFKA_REST_SASL_DEPLOY_MODE}
+      ${CONTECO_DC_KAFKA_REST_SASL_DEPLOY_MODE_REPLICATED_REPLICAS}
       resources:
         limits:
           cpus: '${CONTECO_DC_KAFKA_REST_SASL_DEPLOY_RESOURCES_LIMITS_CPUS}'
